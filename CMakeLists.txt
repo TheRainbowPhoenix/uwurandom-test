@@ -9,6 +9,7 @@ include(GenerateG3A)
 include(GenerateHH2Bin)
 include(Fxconv)
 find_package(Gint 2.9 REQUIRED)
+find_package(JustUI 1.3.0 REQUIRED)
 
 set(SOURCES
   src/main.c
@@ -31,7 +32,7 @@ fxconv_declare_assets(${ASSETS} ${ASSETS_fx} ${ASSETS_cg} WITH_METADATA)
 add_executable(uwu ${SOURCES} ${ASSETS} ${ASSETS_${FXSDK_PLATFORM}})
 target_compile_options(uwu PRIVATE -Wall -Wextra -Os -g -flto)
 target_include_directories(uwu PRIVATE src/include src/)
-target_link_libraries(uwu Gint::Gint)
+target_link_libraries(uwu Gint::Gint JustUI::JustUI)
 
 if("${FXSDK_PLATFORM_LONG}" STREQUAL fx9860G)
   generate_g1a(TARGET uwu OUTPUT "UWU.g1a"
