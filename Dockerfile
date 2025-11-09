@@ -39,7 +39,7 @@ RUN python3 giteapc.py install Lephenixnoir/OpenLibm -y
 RUN python3 giteapc.py install Vhex-Kernel-Core/fxlibc@dev -y
 RUN python3 giteapc.py install Lephenixnoir/sh-elf-gcc -y  # again for any rebuild/update
 RUN python3 giteapc.py install lda/gint-test@serial-toying -y
-RUN python3 giteapc.py install Lephenixnoir/JustUI -y
+# RUN python3 giteapc.py install Lephenixnoir/JustUI@1.3.0 -y
 
 # USER $USERNAME
 # WORKDIR /home/$USERNAME
