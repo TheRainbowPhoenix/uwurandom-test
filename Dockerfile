@@ -25,13 +25,8 @@ ENV PATH="/home/$USERNAME/.local/bin:$PATH"
 RUN mkdir /home/$USERNAME/.local/
 RUN mkdir /home/$USERNAME/.local/bin
 
-RUN mkdir /tmp/giteapc-install
-WORKDIR /tmp/giteapc-install
-
-RUN curl "https://git.planet-casio.com/Lephenixnoir/GiteaPC/archive/master.tar.gz" -o giteapc-master.tar.gz
-RUN tar -xzf giteapc-master.tar.gz
-RUN cp -r /tmp/giteapc-install/giteapc /home/$USERNAME/ 
 WORKDIR /home/$USERNAME/giteapc
+RUN git clone --depth=1 https://git.planet-casio.com/Lephenixnoir/GiteaPC .
 RUN python3 giteapc.py install Lephenixnoir/GiteaPC -y
 
 # sysroot is part of fxsdk so this is needed first
