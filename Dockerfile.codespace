@@ -1,4 +1,4 @@
-FROM pull ghcr.io/therainbowphoenix/uwurandom-test:master
+FROM ghcr.io/therainbowphoenix/uwurandom-test:master
 
 # RUN echo "export SDK_DIR=${SDK_DIR}" >> ~/.bashrc
 # RUN echo "export OLD_SDK_DIR=${OLD_SDK_DIR}" >> ~/.bashrc
@@ -15,5 +15,6 @@ RUN echo "dev:dev" | chpasswd \
 
 # Optional: prevent sudo from asking for a password
 RUN echo "dev ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
 
 WORKDIR /workspace
